@@ -33,7 +33,7 @@ if (Meteor.isClient) {
     },
     'click .decrement': function() {
       var selectedPlayer = Session.get('selectedPlayer');
-      Meteor.call('modifyPlayerScore', selectedPlayer, 5);
+      Meteor.call('modifyPlayerScore', selectedPlayer, -5);
     },
     'click .remove': function() {
       var selectedPlayer = Session.get('selectedPlayer');
@@ -64,7 +64,7 @@ if (Meteor.isServer) {
       var currentUserId = Meteor.userId();
       Playerslist.insert({
         name: playerName,
-        score: playerScore,
+        score: parseInt(playerScore),
         createdBy: currentUserId
       });
     },
@@ -72,10 +72,6 @@ if (Meteor.isServer) {
       Playerslist.remove(player);
     },
     'modifyPlayerScore': function(player, playerScore) {
-      console.log(player);
-      console.log(playerScore);
-      console.log(typeof playerScore);
-      console.log(Playerslist.find(player).fetch());
       Playerslist.update(player, {$inc: {score: playerScore} });
     }
   });
