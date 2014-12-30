@@ -1,0 +1,51 @@
+.container {
+	height: 100%;
+	max-width: 1024px;
+	margin: 0 auto;
+}
+.container h1 {
+	margin: 0 auto;
+	max-width: 300px;
+	text-align: center;
+}
+.container .custom-login {
+	margin: 0 auto;
+	max-width: 300px;
+	text-align: center;
+}
+.container ul {
+	list-style: none;
+	margin: 0 auto;
+	max-width: 150px;
+	padding: 0;
+}
+.container .custom-buttons {
+	max-width: 275px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+.container .custom-buttons input {
+	display: block;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+.container .custom-buttons h3 {
+	margin: 0 auto;
+	max-width: 200px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+.container ul li {
+	margin-top: 10px;
+	text-align: center;
+}
+.container form {
+	max-width: 500px;
+	margin: 0 auto;
+}
+.selected {
+	background-color: yellow;
+}
+.player {
+	cursor: pointer;
+}
