@@ -1,0 +1,17 @@
+<template name="posts">
+	{{#if currentUser}}
+		<ul>
+			{{#each post}}
+				<li>
+					<div class="onePost">
+						<h4 class="postTitle">{{title}}</h4>
+						<div class="postContent">{{content}}</div>
+						{{#if showSelectedPost}}
+							<input type="button" class="remove" value="Remove Post">
+						{{/if}}
+					</div>
+				</li>
+			{{/each}}
+		</ul>
+	{{/if}}
+</template>

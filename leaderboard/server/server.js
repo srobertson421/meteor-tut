@@ -1,25 +1,26 @@
 // Fuck...We're totally gonna publish the available data of the user...hope someone subscribes to it
-Meteor.publish('thePlayers', function() {
+Meteor.publish('thePosts', function() {
   var currentUserId = this.userId;
-  return Playerslist.find({createdBy: currentUserId});
+  return Posts.find({createdBy: currentUserId});
 });
 
 // Holy Christ!! Server-side data manipulation methods!!!
 Meteor.methods({
   // Say what?! We're gonna use it to create new data!
-  'insertPlayerData': function(playerName, playerScore) {
+  'insertPostData': function(postTitle, postContent) {
     var currentUserId = Meteor.userId();
-    Playerslist.insert({
-      name: playerName,
-      score: parseInt(playerScore),
+    Posts.insert({
+      title: postTitle,
+      content: postContent,
       createdBy: currentUserId
     });
   },
   // Hey...lets try and get rid of some shit
-  'removePlayerData': function(player) {
-    Playerslist.remove(player);
+  'removePostData': function(post) {
+    Posts.remove(post);
   },
   // Ya man, you gotta change stuff to make it good right?
+  // TODO make so updated text in field is sent to document
   'modifyPlayerScore': function(player, playerScore) {
     Playerslist.update(player, {$inc: {score: playerScore} });
   }

@@ -46,6 +46,9 @@
 .selected {
 	background-color: yellow;
 }
-.player {
+.onePost {
 	cursor: pointer;
+}
+
+.postFormContent {
 }

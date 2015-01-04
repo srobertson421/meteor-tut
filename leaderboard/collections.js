@@ -1,2 +1,2 @@
 // Mothafuckin NOSQL database bitches
-Playerslist = new Mongo.Collection('players');
+Posts = new Mongo.Collection('posts');
